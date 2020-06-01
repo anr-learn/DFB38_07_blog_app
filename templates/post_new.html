@@ -1,0 +1,14 @@
+<!-- DFB38_06_blog_app/templates/post_new.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>New post</h1>
+	<form action="" method="post">{% csrf_token %}
+	  {{ form.as_p }}  <!-- render form using P tags (paragraphs) -->
+	  <input type="submit" value="Save" />
+	</form>
+
+{% endblock content %}
+
+<! -- ### end ### -->

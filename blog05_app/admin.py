@@ -1,3 +1,9 @@
+# DFB38_07_blog_app/blog05_app/admin.py
+
 from django.contrib import admin
 
-# Register your models here.
+from .models import BlogPost
+
+admin.site.register(BlogPost)
+
+### end ###

@@ -1,0 +1,14 @@
+<!-- DFB38_06_blog_app/templates/post_delete.html -->
+
+{% extends 'base.html' %}
+
+<!--  NOTE that 'content' is a name we name up, not a reserved / keyword -->
+{% block content %}
+	<h1>Delete post</h1>
+	<form action="" method="post">{% csrf_token %}
+		<p> Are you sure you want to delete "{{ blog_post_delete_object.postTitle }}"?</p>
+		<input type="submit" value="Confirm" />
+	</form>
+{% endblock content %}
+
+<!-- ### end ### -->

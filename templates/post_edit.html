@@ -1,0 +1,15 @@
+<!-- DFB38_06_blog_app/templates/post_edit.html -->
+
+{% extends 'base.html' %}
+
+<!--  NOTE that 'content' is a name we name up, not a reserved / keyword -->
+{% block content %}
+	<h1>Edit post</h1>
+	<form action="" method="post">{% csrf_token %}
+	  {{ form.as_p }}   <!-- render form using P tags (paragraphs) -->
+	  <input type="submit" value="Update" >/
+	</form>
+
+{% endblock content %}
+
+<! -- ### end ### -->

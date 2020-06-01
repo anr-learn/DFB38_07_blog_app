@@ -1,0 +1,36 @@
+<!-- DFB38_06_blog_app/templates/post_detail.html -->
+
+{% extends 'base.html' %}
+
+<!--  NOTE that 'content' is a name we name up, not a reserved / keyword -->
+{% block content %}
+  <div class="post-entry">
+   <!--  NOTE that 'object' is a name provided automatically by Django.  -->
+   <!--       Can also use the model class name, lower-cased: -->
+   <!-- Alternative 1: default name 'object' 
+    <h2>{{ object.postTitle }}</h2>
+    <p>{{ object.postBody }}</p>
+   -->
+   <!-- Alternative 2: default name based on lower-cased version of the
+        model class name:  BlogPost ==> 'blogpost' 
+    <h2>{{ blogpost.postTitle }}</h2>
+    <p>{{ blogpost.postBody }}</p>
+   -->
+   <!-- Alternative 3: name explicitly provided using the
+        context_object_name property of BlogDetailView.
+        NOTE that 'object' still works even when context_object_name
+        attrib is specified in the view class, but the lower-cased
+        model class name 'blogpost' does not.
+     --> 
+    <h2>{{ blog_post_detail_object.postTitle }}</h2>
+    <p>{{ blog_post_detail_object.postBody }}</p>
+  </div>
+  <a href="{% url 'post_edit' blog_post_detail_object.pk %}">+ Edit Blog Post</a>
+  <br>
+  <a href="{% url 'post_delete' blog_post_detail_object.pk %}">+ Delete Blog Post</a>
+
+{% endblock content %}
+
+
+
+<!-- -->
